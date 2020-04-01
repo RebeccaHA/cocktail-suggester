@@ -1,6 +1,5 @@
 class UserController < ApplicationController
     get '/login' do
-    
     erb :'/users/login'
     end
 
@@ -12,4 +11,15 @@ class UserController < ApplicationController
         end
         erb :'/users/error'
     end
+
+    get '/signup' do
+    erb :'/users/sign_up'
+    end
+
+    post '/signup' do
+        user = User.create(params[:user])
+
+    end
+
+
 end
