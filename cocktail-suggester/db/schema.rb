@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200401141450) do
+ActiveRecord::Schema.define(version: 20200401212230) do
 
   create_table "cocktails", force: :cascade do |t|
     t.string  "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20200401141450) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
+    t.string "favourite_cocktail"
   end
 
 end
