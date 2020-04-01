@@ -7,7 +7,7 @@ class UserController < ApplicationController
         user = User.find_by(username: params[:username])
         if user !=nil && user.authenticate(params[:password])
             session[:user_id] = user.id 
-            redirect to '/user/#{user.id}'
+            redirect "/user/#{user.id}"
         end
         erb :'/users/error'
     end
@@ -20,7 +20,8 @@ class UserController < ApplicationController
         user = User.create(params)
         user.save
         session[:user_id] = user.id
-        redirect to "/user/#{user.id}"
+
+        redirect "/user/#{user.id}"
     end
 
     get '/user/:id' do
