@@ -1,17 +1,9 @@
-@media screen {
-  /* --- Reset Styles --- */
-  * {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+/* --- Welcome Page Styles --- */
 
-  html, body {
-    height: 100%;
-    width: 100%;
-  }
-
-  /* --- Welcome Page Styles --- */
+  @font-face {
+    font-family: 'LibreBaskerville';
+    src: url('public/fonts/LibreBaskerville-Bold.ttf');
+ }
   body {
     background-color: lightblue;
     color: #333;
@@ -81,7 +73,7 @@
     margin-top: 20px;
     padding-top: 20px;
   }
-}
+
 
 @media screen and (max-width: 600px) {
   .wrapper {
