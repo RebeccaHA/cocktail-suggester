@@ -1,4 +1,4 @@
 class Ingredient < ActiveRecord::Base
    belongs_to :user
-   belongs_to :cocktail
+   has_many :cocktails
 end
