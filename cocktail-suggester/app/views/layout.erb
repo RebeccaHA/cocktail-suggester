@@ -15,7 +15,15 @@
   </head>
   <body>
     <div class="wrapper">
-
+        <%if Helpers.is_logged_in?(session)%>
+        <nav>
+        <ul>
+        <li><a href="/user/account">Account</a></li>
+        <li><a href="/user/:id">My stash ingredients</a></li>
+        <li><a href="/logut">Logout/a></li>
+        </ul>
+        </nav>
+        <%end%>
         <%= yield %>
 
       <footer class="branding">
