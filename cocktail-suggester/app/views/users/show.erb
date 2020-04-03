@@ -1,8 +1,10 @@
 <h2>Ingredient stash list </h2>
-<% @ingredients.each do |ingredient|%>
-<h3><%= ingredient.ingredient_slot_1%></h3>
-<h3><%= ingredient.ingredient_slot_2%></h3>
-<h3><%= ingredient.ingredient_slot_3%></h3>
-<h3><%= ingredient.ingredient_slot_4%></h3>
-<h3><%= ingredient.ingredient_slot_5%></h3>
+<% @ingredients.each_with_index do |ingredient, index|%>
+<h3><%= index %>. The stash</h3>
+<p><%= ingredient.ingredient_slot_1%></p>
+<p><%= ingredient.ingredient_slot_2%></p>
+<p><%= ingredient.ingredient_slot_3%></p>
+<p><%= ingredient.ingredient_slot_4%></p>
+<p><%= ingredient.ingredient_slot_5%></p>
+<a href="/ingredients/<%= ingredient.id %>/edit">Edit stash </a>
 <%end%>
