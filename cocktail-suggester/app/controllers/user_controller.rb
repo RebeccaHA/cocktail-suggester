@@ -28,7 +28,7 @@ class UserController < ApplicationController
 
     get '/user/:id' do
         @user = User.find_by_id(params[:id])
-        @ingredients = @user.ingredients
+        @stashes = @user.stashes
         
         erb :'/users/show'
     end

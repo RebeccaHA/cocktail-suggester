@@ -11,24 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200403101016) do
+ActiveRecord::Schema.define(version: 20200403180346) do
 
   create_table "cocktails", force: :cascade do |t|
     t.string  "name"
     t.string  "description"
-    t.string  "ingredients"
+    t.integer "stash_id"
     t.string  "garnish"
     t.string  "glassware"
     t.integer "method_time"
-    t.integer "ingredient_id"
   end
 
   create_table "ingredients", force: :cascade do |t|
-    t.string  "ingredient_slot_1"
-    t.string  "ingredient_slot_2"
-    t.string  "ingredient_slot_3"
-    t.string  "ingredient_slot_4"
-    t.string  "ingredient_slot_5"
+    t.string "name"
+    t.string "stash_id"
+  end
+
+  create_table "stashes", force: :cascade do |t|
+    t.string  "name"
     t.integer "user_id"
   end
 

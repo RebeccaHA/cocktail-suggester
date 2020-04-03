@@ -1,14 +1,15 @@
 /* --- Welcome Page Styles --- */
-
-  @font-face {
-    font-family: 'LibreBaskerville';
-    src: url('public/fonts/LibreBaskerville-Bold.ttf');
- }
+@font-face {
+  font-family: 'LibreBaskerville';
+  src: url('public/fonts/LibreBaskerville-Bold.ttf');
+}
+  
   body {
     background-color: lightblue;
     color: #333;
-    font-family: Sans-Serif;
+    font-family: 'LibreBaskerville';
     line-height: 18px;
+  
   }
 
   .wrapper {

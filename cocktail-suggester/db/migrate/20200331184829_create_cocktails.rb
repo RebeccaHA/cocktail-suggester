@@ -1,9 +1,9 @@
-class CreateCocktail < ActiveRecord::Migration
+class CreateCocktails < ActiveRecord::Migration
   def change
-    create_table :cocktail do |t|
+    create_table :cocktails do |t|
       t.string :name
       t.string :description
-      t.string :ingredients
+      t.integer :stash_id
       t.string :garnish
       t.string :glassware
       t.integer :method_time

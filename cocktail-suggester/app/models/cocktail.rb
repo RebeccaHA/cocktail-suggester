@@ -1,5 +1,5 @@
 class Cocktail < ActiveRecord::Base
-    belongs_to :users
-    belongs_to :ingredients
+    belongs_to :stash
+    has_many :ingredients, through: :stash
     
 end
