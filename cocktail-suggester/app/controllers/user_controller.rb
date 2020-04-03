@@ -29,6 +29,7 @@ class UserController < ApplicationController
     get '/user/:id' do
         @user = User.find_by_id(params[:id])
         
+        
         erb :'/users/account'
     end
 
