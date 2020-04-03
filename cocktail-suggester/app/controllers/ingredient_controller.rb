@@ -12,10 +12,10 @@ class IngredientController < ApplicationController
 
     post '/ingredients' do
         ingredient_stash = Ingredient.create(params)
-        user = Helper.is_logged_in?
-        ingredient_stash.user = user
+        user = Helpers.is_logged_in?(session)
+        ingredient_stash.user_id = user.id
         ingredient_stash.save
-        
+
         redirect to "/users/#{user.id}"
     end
 end
