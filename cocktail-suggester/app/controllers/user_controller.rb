@@ -33,11 +33,12 @@ class UserController < ApplicationController
         erb :'/users/show'
     end
 
-    get '/user/account' do 
+    get '/account' do 
         if Helpers.is_logged_in?(session)
-          @user = Helpers.current_user(session)
+            @user = Helpers.current_user(session)
+         erb :'users/account'
         end
-        erb :'users/account'
+       
       end
 
     get '/logout' do
