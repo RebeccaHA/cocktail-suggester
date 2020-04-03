@@ -1,14 +1,16 @@
 <h1>Add a new cupboard ingredient stash</h2>
 <form action="/stashes" method="post">
+<label>Stash Name</label>
+<input type="text" name="name" id="stash_name"><br>
 <label>Ingredient 1:</label>
-<input type="text" name="ingredient_slot_1" id="ingredient_slot_1"><br>
+<input type="text" name="ingredients[][name]" id="ingredient_slot_1"><br>
 <label>Ingredient 2:</label>
-<input type="text" name="ingredient_slot_2" id="ingredient_slot_2"><br>
+<input type="text" name="ingredients[][name]" id="ingredient_slot_2"><br>
 <label>Ingredient 3:</label>
-<input type="text" name="ingredient_slot_3" id="ingredient_slot_3"><br>
+<input type="text" name="ingredients[][name]" id="ingredient_slot_3"><br>
 <label>Ingredient 4:</label>
-<input type="text" name="ingredient_slot_4" id="ingredient_slot_4"><br>
+<input type="text" name="ingredients[][name]" id="ingredient_slot_4"><br>
 <label>Ingredient 5:</label>
-<input type="text" name="ingredient_slot_5" id="ingredient_slot_5"><br>
+<input type="text" name="ingredients[][name]" id="ingredient_slot_5"><br>
 <input type="submit" value="Add ingredient stash">
 </form>

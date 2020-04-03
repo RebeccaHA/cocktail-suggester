@@ -1,9 +1,11 @@
 <h1>All Stashes</h1>
-<% @stashes.each do |ingredient_set|%>
-<p>Ingredient 1:<%= ingredient_set.ingredient_slot_1%></p><br>
-<p>Ingredient 2:<%= ingredient_set.ingredient_slot_2%></p><br>
-<p>Ingredient 3:<%= ingredient_set.ingredient_slot_3%></p><br>
-<p>Ingredient 4:<%= ingredient_set.ingredient_slot_4%></p><br>
-<p>Ingredient 5<%= ingredient_set.ingredient_slot_5%></p><br>
+<% @stashes.each do |stash|%>
+<p><%= stash.name%></p><br>
+    <%@stashes.ingredients each do |ingredient|%>
+<p>Ingredient 1:<%= ingredient.name%></p><br>
+<p>Ingredient 2:<%= ingredient.name%></p><br>
+<p>Ingredient 3:<%= ingredient.name%></p><br>
+<p>Ingredient 4:<%= ingredient.name%></p><br>
+<p>Ingredient 5<%= ingredient.name%></p><br>
 <%end%>
-
+<%end%>

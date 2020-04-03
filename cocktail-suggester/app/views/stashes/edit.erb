@@ -1,10 +1,10 @@
 <h1>Edit your stash here</h1>
 <form action="/stashes/<%= @stash.id %>" method="POST">
 <input type="hidden" name="_method" value="patch">
-<input type="text" name="stashes[ingredient_slot_1]" value="<%= @stash.ingredient_slot_1%>"><br>
-<input type="text" name="stashes[ingredient_slot_2]" value="<%= @stash.ingredient_slot_2%>"><br>
-<input type="text" name="stashes[ingredient_slot_3]" value="<%= @stash.ingredient_slot_3%>"><br>
-<input type="text" name="stashes[ingredient_slot_4]" value="<%= @stash.ingredient_slot_4%>"><br>
-<input type="text" name="stashes[ingredient_slot_5]" value="<%= @stash.ingredient_slot_5%>"><br>
+<input type="text" name="stash[name]" value="<%=@stash.name%>" >
+<%@stash.ingredients.each do |ingredient|%>
+<input type="text" name="[ingredients][][name]" value="<%=ingredient.name%>"><br>
+<input type="hidden" name="[ingredients][][id]" value="<%=ingredient.id%>"><br>
+<%end%>
 <input type="submit" value="Update stash">
 </form>
