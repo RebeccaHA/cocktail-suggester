@@ -21,4 +21,9 @@
 <input type="radio" name="user[favourite_cocktail]" value="everything" id="type_5"><br>
 
 <input type="submit" value="Update account">
+
+<form action="/account/<%=@user.id%>" method="POST">
+<input type="hidden" name="_method" value="DELETE">
+<input type="submit" value="Delete account">
+
 <a href="/logout">Logout</a>

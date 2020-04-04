@@ -62,6 +62,16 @@ class UserController < ApplicationController
 
         redirect to '/login'
      end
+
+     delete '/account/:id' do
+        user = User.find_by_id(params[:id])
+    
+        if user == Helpers.current_user(session) 
+            user.destroy
+            session.clear
+        end
+        redirect to '/signup'
+     end
         
     
 
