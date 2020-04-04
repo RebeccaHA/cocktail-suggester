@@ -33,7 +33,7 @@ class UserController < ApplicationController
         erb :'/users/show'
     end
 
-    get '/account' do 
+    get '/account/:id' do 
         if Helpers.is_logged_in?(session)
             @user = Helpers.current_user(session)
          erb :'users/account'
@@ -44,6 +44,16 @@ class UserController < ApplicationController
         if Helpers.is_logged_in?(session)
             @user = Helpers.current_user(session)
          erb :'users/account_edit'
+        end
+    end
+
+    patch '/account/:id' do
+        user = User.find_by_id(params[:id])
+    
+        if user == Helpers.current_user(session) 
+            user.update(params[:user])
+
+        redirect to "/account/#{user.id}"
         end
     end
 

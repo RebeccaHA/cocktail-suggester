@@ -18,7 +18,7 @@
         <%if Helpers.is_logged_in?(session) && Helpers.current_user(session)%>
         <nav>
         <ul>
-        <li><a href="/account">Account</a></li>
+        <li><a href="/account/<%=Helpers.current_user(session).id%>">Account</a></li>
         <li><a href="/user/<%=Helpers.current_user(session).id%>">My stash lists</a></li>
         <li><a href="/stashes/new">New stash ingredients</a></li>
         <li> Cocktail library </li>
