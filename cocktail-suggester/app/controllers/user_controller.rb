@@ -38,8 +38,14 @@ class UserController < ApplicationController
             @user = Helpers.current_user(session)
          erb :'users/account'
         end
-       
-      end
+    end
+
+    get '/account/:id/edit' do
+        if Helpers.is_logged_in?(session)
+            @user = Helpers.current_user(session)
+         erb :'users/account_edit'
+        end
+    end
 
     get '/logout' do
         session.clear
