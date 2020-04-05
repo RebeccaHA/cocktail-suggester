@@ -1,3 +1,4 @@
+<div class=".col-6 .col-sm-4">
 <h2>Stash list </h2>
 <% @stashes.each_with_index do |stash, index|%>
    <h3><%= index%>. <%=stash.name%></h3>
@@ -7,3 +8,4 @@
 <%end%>
 <a href="/stashes/<%= stash.id %>/edit">Edit stash </a>
 <%end%>
+</div>
