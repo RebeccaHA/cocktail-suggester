@@ -2,24 +2,33 @@
 
 <form action="/account/<%=@user.id%>" method="POST">
 <input type="hidden" name="_method" value="patch">
-<label>Username</label>
-<input type="text" name="user[username]" value="<%=@user.username%>"><br>
-<label>Email</label>
-<input type="email" name="user[email]" value="<%=@user.email%>"><br>
-<label>Password</label>
+<label class="form-check-label">Username</label><br>
+<input type="text" name="user[username]" value="<%=@user.username%>">
+<br>
+<label class="form-check-label">Email</label><br>
+<input type="email" name="user[email]" value="<%=@user.email%>">
+<br>
+<label class="form-check-label">Password</label><br>
 <input type="password" name="user[password]" value="<%=@user.password%>">
+<br>
 <h3>Favourite cocktail types</h3><br>
-<h4>Rich & creamy </h4>
-<input type="radio" name="user[favourite_cocktail]" value="rich_creamy" id="type_1"><br>
-<h4>Bitter</h4>
-<input type="radio" name="user[favourite_cocktail]" value="bitter" id="type_2"><br>
-<h4>Sour</h4>
-<input type="radio" name="user[favourite_cocktail]" value="sour" id="type_3"><br>
-<h4>Sweet</h4>
-<input type="radio" name="user[favourite_cocktail]" value="sweet" id="type_4"><br>
-<h4>Open to everything!</h4>
-<input type="radio" name="user[favourite_cocktail]" value="everything" id="type_5"><br>
 
+<input type="radio" name="user[favourite_cocktail]" value="rich_creamy" id="type_1">
+<label class="form-check-label" >Rich & creamy </label><br>
+
+<input type="radio" name="user[favourite_cocktail]" value="bitter" id="type_2">
+<label class="form-check-label" >Bitter</label><br>
+
+<input type="radio" name="user[favourite_cocktail]" value="sour" id="type_3">
+<label class="form-check-label" >Sour</label><br>
+
+<input type="radio" name="user[favourite_cocktail]" value="sweet" id="type_4">
+<label class="form-check-label" >Sweet</label><br>
+
+<input type="radio" name="user[favourite_cocktail]" value="everything" id="type_5">
+<label class="form-check-label" >Open to everything!</label>
+<br>
+<br>
 <input type="submit" value="Update account">
 
 <form action="/account/<%=@user.id%>" method="POST">

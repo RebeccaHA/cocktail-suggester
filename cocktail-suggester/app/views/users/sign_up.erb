@@ -2,29 +2,32 @@
 <h1>Sign Up</h1>
 
 <form action="/signup" method="POST">
-<h3>Username</h3><br>
+<h3>Username</h3>
 <input type="text" name="username" value="" id="username_field"><br>
 
-<h3>Email</h3><br>
+<h3>Email</h3>
 <input type="email" name="email" id="email"><br>
 
-<h3>Password</h3><br>
+<h3>Password</h3>
 <input type="password" name="password" id="password_field"><br>
+<br>
+<h3>Favourite cocktail types</h3>
 
-
-
-<h3>Favourite cocktail types</h3><br>
-<h4>Rich & creamy </h4>
-<input type="radio" name="favourite_cocktail" value="rich_creamy" id="type_1"><br>
-<h4>Bitter</h4>
-<input type="radio" name="favourite_cocktail" value="bitter" id="type_2"><br>
-<h4>Sour</h4>
-<input type="radio" name="favourite_cocktail" value="sour" id="type_3"><br>
-<h4>Sweet</h4>
-<input type="radio" name="favourite_cocktail" value="sweet" id="type_4"><br>
-<h4>Open to everything!</h4>
-<input type="radio" name="favourite_cocktail" value="everything" id="type_5"><br>
-
+<input type="radio" name="favourite_cocktail" value="rich_creamy" id="type_1">
+<label class="form-check-label">Rich & creamy </label>
+<br>
+<input   type="radio" name="favourite_cocktail" value="bitter" id="type_2">
+<label class="form-check-label">Bitter</label>
+<br>
+<input  type="radio" name="favourite_cocktail" value="sour" id="type_3">
+<label class="form-check-label">Sour</label>
+<br>
+<input  type="radio" name="favourite_cocktail" value="sweet" id="type_4">
+<label class="form-check-label">Sweet</label>
+<br>
+<input  type="radio" name="favourite_cocktail" value="everything" id="type_5">
+<label class="form-check-label">Open to everything!</label>
+<br>
 <input type="submit" id="submit">
 
 
