@@ -28,6 +28,22 @@ class StashController < ApplicationController
         redirect to "/user/#{user.id}"
     end
 
+    get '/stashes/:id/cocktail' do
+        @stash = Stash.find_by_id(params[:id])
+        @cocktail = Cocktail.all.detect do |cocktail|
+            @stash.ingredients.detect do |ingredient|
+                cocktail.ingredients.include?(ingredient.name)
+            end
+        end
+      
+        @cocktail.stash = @stash
+        @cocktail.save
+        
+        erb :'/cocktails/show'
+    end
+
+
+
     get '/stashes/:id/edit' do
         @stash = Stash.find_by_id(params[:id])
         @user = @stash.user
@@ -54,5 +70,6 @@ class StashController < ApplicationController
      erb :'/users/error'
     end
 
+   
 
 end
