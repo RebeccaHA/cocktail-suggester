@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20200403180346) do
     t.integer "stash_id"
     t.string  "garnish"
     t.string  "glassware"
-    t.integer "method_time"
+    t.string  "method"
   end
 
   create_table "ingredients", force: :cascade do |t|

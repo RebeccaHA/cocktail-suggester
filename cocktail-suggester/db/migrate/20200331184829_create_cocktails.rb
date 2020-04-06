@@ -6,7 +6,7 @@ class CreateCocktails < ActiveRecord::Migration
       t.integer :stash_id
       t.string :garnish
       t.string :glassware
-      t.integer :method_time
+      t.string :method
     end
   end
 end
