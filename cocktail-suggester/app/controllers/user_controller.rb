@@ -33,7 +33,7 @@ class UserController < ApplicationController
         erb :'/users/show'
     end
 
-    get '/user/:id/cocktail' do
+    get '/user/:id/cocktails' do
         @user = User.find_by_id(params[:id])
         @cocktails = @user.cocktails
         erb :'/cocktails/index'

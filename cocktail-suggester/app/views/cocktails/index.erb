@@ -7,7 +7,11 @@
 <p>Ingredients: <%= cocktail.ingredients%></p><br>
 <p>Method:<%= cocktail.method%></p><br>
 <p>Garnish:<%= cocktail.garnish%></p><br>
-<input type="submit" value="Remove from saved cocktails">
+<form action="/user/<%=@user.id%>/cocktail" method="POST">
+<input type="hidden" name="_method" value="DELETE">
+<input type="hidden" type="_method" name="cocktail[id]" value="<%= cocktail.id%>">
+<input type="submit" value="Remove cocktail from library">
+</form>
 <%end%>
 
 </div>
