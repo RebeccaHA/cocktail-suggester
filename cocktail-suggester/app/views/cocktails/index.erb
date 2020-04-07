@@ -1,0 +1,12 @@
+<div class=".col-6 .col-sm-4">
+<h2>Cocktail list </h2>
+<% @cocktails.each do |cocktail|%>
+<h2><%= cocktail.name%></h2>
+<p>Description:<%= cocktail.description%></p><br>
+<p>Glassware:<%= cocktail.glassware%></p><br>
+<p>Ingredients: <%= cocktail.ingredients%></p><br>
+<p>Method:<%= cocktail.method%></p><br>
+<p>Garnish:<%= cocktail.garnish%></p><br>
+<%end%>
+
+</div>

@@ -33,6 +33,13 @@ class UserController < ApplicationController
         erb :'/users/show'
     end
 
+    get '/user/:id/cocktail' do
+        @user = User.find_by_id(params[:id])
+        @cocktails = @user.cocktails
+        erb :'/cocktails/index'
+    end
+
+
     get '/account/:id' do 
         if Helpers.is_logged_in?(session)
             @user = Helpers.current_user(session)

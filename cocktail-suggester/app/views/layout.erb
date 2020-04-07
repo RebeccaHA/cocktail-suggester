@@ -25,7 +25,8 @@
         <a class="nav-link" href="/user/<%=Helpers.current_user(session).id%>">My stash lists</a></li>
         <li class ="nav-item">
         <a class="nav-link" href="/stashes/new">New stash ingredients</a></li>
-        <li class ="nav-item"> Cocktail library </li>
+        <li class ="nav-item">
+         <a class="nav-link" href="/user/<%=Helpers.current_user(session).id%>/cocktails"> Cocktail library</a> </li>
         <li class ="nav-item">
         <a class="nav-link" href="/logout">Logout</a></li>
         </ul>

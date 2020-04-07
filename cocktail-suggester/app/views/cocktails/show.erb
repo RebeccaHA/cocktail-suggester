@@ -6,7 +6,13 @@
 <p>Ingredients: <%= cocktail.ingredients%></p><br>
 <p>Method:<%= cocktail.method%></p><br>
 <p>Garnish:<%= cocktail.garnish%></p><br>
-<form action="/">
-<input type=>
+<form action="/cocktails" method="POST">
+<input type="hidden" type="_method" name="cocktail[name]" value="<%= cocktail.name%>">
+<input type="hidden" type="_method" name="cocktail[description]" value="<%= cocktail.description%>">
+<input type="hidden" type="_method" name="cocktail[glassware]" value="<%= cocktail.glassware%>">
+<input type="hidden" type="_method" name="cocktail[ingredients]" value="<%= cocktail.ingredients%>">
+<input type="hidden" type="_method" name="cocktail[method]" value="<%= cocktail.method%>">
+<input type="hidden" type="_method" name="cocktail[garnish]" value="<%= cocktail.garnish%>">
+<input type="submit" value="Save cocktail">
 <%end%>
 
