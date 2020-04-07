@@ -30,14 +30,16 @@ class StashController < ApplicationController
 
     get '/stashes/:id/cocktail' do
         @stash = Stash.find_by_id(params[:id])
-        @cocktail = Cocktail.all.detect do |cocktail|
+        @cocktails = Cocktail.all.select do |cocktail|
             @stash.ingredients.detect do |ingredient|
                 cocktail.ingredients.include?(ingredient.name)
+              
             end
+           
         end
-      
-        @cocktail.stash = @stash
-        @cocktail.save
+    
+        #@cocktails.stash = @stash
+       # @cocktails.save
         
         erb :'/cocktails/show'
     end

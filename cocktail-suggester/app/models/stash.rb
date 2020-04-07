@@ -1,6 +1,7 @@
 class Stash < ActiveRecord::Base
     belongs_to :user
-    has_one :cocktail
+    
+    has_and_belongs_to_many :cocktails
     has_many :ingredients
 
     validates :name, presence: true
