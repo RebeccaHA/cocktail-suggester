@@ -1,6 +1,20 @@
 
-Cocktail.create(name: "Twinkle", description: "Elegant and simple. Perfect for celebrations.", glassware:"Sours Glass" , ingredients: "Wyborowa, Elderflower cordial, Perrier Jouet", method:"Add vodka and elderflower cordial to shaker, shake and double strain into coupette, top champagne and garnish", garnish:"Large lemon twist")
-Cocktail.create(name: "Somerset Soure", description: "The sophisticated counterpoint to an Appletini.", glassware:"Sours Glass" , ingredients: "Somerset Brandy 5yr mix, Lemon Juice, gomme, egg white, Breton Cider", method:"Add Somerset brandy, Cognac, lemon juice, gomme and egg white. Dry shake, add ice and strain into, coupette, top with 25ml cider, garnish", garnish:"No garnish")
-Cocktail.create(name: "Jack Rose", description: "A fruity cocktail that still packs a punch. Popular in the 1920's", glassware:"Sours Glass" , ingredients: "Somerset cider brandy 5yr, Merlet Cognac V.S.OP,Lemon Juice,Grenadine", method:"Combine Somerset brandy, Cognac lemon juice and grenadine in shaker shake hard and double strain into Sours glass", garnish:"No garnish")
-Cocktail.create(name: "White Lady", description: "Timeless drink in the sour family. A gin sour accented with orange from the triple sec.", glassware:"Sours Glass" , ingredients: "Beefeater, Merlet Triple sec, Lemon Juice, Egg white, Gomme", method:"Combine Gin, Triple sec, lemon juice egg white and gomme in shaker, dry shake, shake hard with ice and strain into Sours glass and garnish", garnish:"Large lemon twist(discard)")
-Cocktail.create(name: "Corpse Reviver #2", description: "A bright complex drink with a hint of anise.", glassware:"Sours Glass" , ingredients: "Beefeater, Merlet Triple sec, Lillet blanc, Lemon Juice, Pernod Absinthe", method:"Combine Gin, Lillet, Triple sec and lemon juice and Absinthe in shaker shake and double strain into Sours glass and garnish", garnish:"Large lemon twist")
+require 'csv'
+
+csv_text = File.read(Rails.root.join('db', 'seeds', 'cocktails.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+
+    csv.each do |row|
+        t = Cocktail.new
+        t.name = row['name']
+        t.description = row['description']
+        t.glasssare = row['glassware']
+        t.ingredients = row['ingredients']
+        t.method = row['method']
+        t.garnish = row['garnish']
+        
+        puts "#{t.name} saved"
+    end
+    
+    puts "There are now #{Cocktail.count} rows in the cocktails table"
+  end
