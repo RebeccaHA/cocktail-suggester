@@ -1,7 +1,8 @@
 /* --- Welcome Page Styles --- */
+@import "bulma";
 @font-face {
   font-family: 'LibreBaskerville';
-  src: url('public/fonts/LibreBaskerville-Bold.ttf');
+  src: url("https://fonts.googleapis.com/css?family=LibreBaskerville");
 }
   
   body {
