@@ -5,6 +5,7 @@ class StashController < ApplicationController
     end
 
     get '/stashes/new' do
+        @hero_body="Add a cocktail cabinet"
         if !Helpers.is_logged_in?(session)
             redirect '/login'
         end

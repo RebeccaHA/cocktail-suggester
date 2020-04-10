@@ -1,68 +1,69 @@
 <div class="container">
- <div class="field">
-  <h1 class="title is-1">Edit your account</h1>
+ 
    <form action="/account/<%=@user.id%>" method="POST">
     <input type="hidden" name="_method" value="patch">
      <label class="label is-medium">Username</label>
       <div class="control">
        <input class="input is-small" type="text" name="user[username]" value="<%=@user.username%>">
+    
+
+
+  <div class="field">
+  <label class="label is-medium">Email</label>
+    <div class="control">
+    <input class="input is-small" type="email" name="user[email]" value="<%=@user.email%>">
     </div>
- </div>
-
-<div class="field">
- <label class="label is-medium">Email</label>
-  <div class="control">
-   <input class="input is-small" type="email" name="user[email]" value="<%=@user.email%>">
-  </div>
-</div>
-
-<div class="field">
- <label class="label is-medium">Password</label>
-   <div class="control">
-<input class="input is-small" type="password" name="user[password]" value="<%=@user.password%>">
-
-<div class="field">
- <label class="label is-medium">Favourite cocktail types</label>
-  <div class="control">
-   <input type="radio" name="user[favourite_cocktail]" value="rich_creamy" id="type_1">
-    <label class="radio" >Rich & creamy </label>
   </div>
 
-<div class="control">
- <input type="radio" name="user[favourite_cocktail]" value="bitter" id="type_2">
-  <label class="radio">Bitter</label>
-</div>
+  <div class="field">
+  <label class="label is-medium">Password</label>
+    <div class="control">
+  <input class="input is-small" type="password" name="user[password]" value="<%=@user.password%>">
 
-<div class="control">
- <input type="radio" name="user[favourite_cocktail]" value="sour" id="type_3">
-  <label class="radio">Sour</label>
-</div>
+  <div class="field">
+  <label class="label is-medium">Favourite cocktail types</label>
+    <div class="control">
+    <input type="radio" name="user[favourite_cocktail]" value="rich_creamy" id="type_1">
+      <label class="radio" >Rich & creamy </label>
+    </div>
 
-<div class="control">
- <input type="radio" name="user[favourite_cocktail]" value="sweet" id="type_4">
-  <label class="radio" >Sweet</label>
-</div>
+  <div class="control">
+  <input type="radio" name="user[favourite_cocktail]" value="bitter" id="type_2">
+    <label class="radio">Bitter</label>
+  </div>
 
-<div class="control">
- <input type="radio" name="user[favourite_cocktail]" value="everything" id="type_5">
-  <label class="radio">Open to everything!</label>
-</div>
+  <div class="control">
+  <input type="radio" name="user[favourite_cocktail]" value="sour" id="type_3">
+    <label class="radio">Sour</label>
+  </div>
 
-<div class="field is-grouped">
-<button class="button is-black is-rounded" type="submit">Update Account</button>
-</form>
+  <div class="control">
+  <input type="radio" name="user[favourite_cocktail]" value="sweet" id="type_4">
+    <label class="radio" >Sweet</label>
+  </div>
 
-<form action="/account/<%=@user.id%>" method="POST">
-<input type="hidden" name="_method" value="DELETE">
-<a href="/signup">
- <button class="button is-danger is-rounded">
-    <span>Delete</span>
-     <span class="icon is-small">
-      <i class="fas fa-times"></i>
-    </span>
-  </button>
-</a>
-</form>
+  <div class="control">
+  <input type="radio" name="user[favourite_cocktail]" value="everything" id="type_5">
+    <label class="radio">Open to everything!</label>
+  </div>
+
+  <div class="field is-grouped">
+  <button class="button is-black is-rounded" type="submit">Update Account</button>
+  </form>
+
+  <form action="/account/<%=@user.id%>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <a href="/signup">
+  <button class="button is-danger is-rounded">
+      <span>Delete</span>
+      <span class="icon is-small">
+        <i class="fas fa-times"></i>
+      </span>
+    </button>
+  </a>
+  </form>
+  </div>
+
 </div>
 
 

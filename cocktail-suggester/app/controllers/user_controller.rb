@@ -27,6 +27,7 @@ class UserController < ApplicationController
     end
 
     get '/user/:id' do
+        @hero_body = "Cocktail cabinet"
         @user = User.find_by_id(params[:id])
         @stashes = @user.stashes
         
@@ -34,6 +35,7 @@ class UserController < ApplicationController
     end
 
     get '/user/:id/cocktails' do
+        @hero_body = "The Bar"
         @user = User.find_by_id(params[:id])
         @cocktails = @user.cocktails
         erb :'/cocktails/index'
@@ -41,6 +43,7 @@ class UserController < ApplicationController
 
 
     get '/account/:id' do 
+        @hero_body = "Account"
         if Helpers.is_logged_in?(session)
             @user = Helpers.current_user(session)
          erb :'users/account'
@@ -48,6 +51,7 @@ class UserController < ApplicationController
     end
 
     get '/account/:id/edit' do
+        @hero_body = "Edit your account"
         if Helpers.is_logged_in?(session)
             @user = Helpers.current_user(session)
          erb :'users/account_edit'

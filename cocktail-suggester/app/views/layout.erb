@@ -13,11 +13,12 @@
 
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
    <link rel="stylesheet" href="/stylesheets/main.css">
-   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-   </head>
-    <body>
-     <section class="hero is-black">
-      <%if Helpers.is_logged_in?(session) && Helpers.current_user(session)%>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    </head>
+     <body>
+     <%if Helpers.is_logged_in?(session) && Helpers.current_user(session)%>
+      <section class="hero is-black">
+      
        <div class="hero-head">
         <nav class="navbar is-black" role="navigation" aria-label="main navigation">
           <div class="container">
@@ -52,7 +53,7 @@
         <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        Title
+        <%=@hero_body%>
       </h1>
       <h2 class="subtitle">
         Subtitle
@@ -62,16 +63,10 @@
    </section>
         <%end%>
 
-         <div class="columns">
-         <div class="column">
-          <div class="column">
-           <div class="column">
           
-        <%= yield %>
-         </div>
-           </div>
-           </div>
-           </div>
+           <%= yield %>
+
+         
 
       <footer class="footer">
         <small>&copy; 2020 <strong>CocktailSuggester</strong></small>
