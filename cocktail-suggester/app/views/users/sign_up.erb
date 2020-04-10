@@ -1,35 +1,58 @@
-<div>
-<h1 class="mb-3 font-weight-normal" >Sign Up</h1>
+<div class="container">
+ <div class="field">
+  <form class="" action="/signup" method="POST"> 
+   <h1 class="title">Sign Up</h1>
+ </div>
+   
+   <div class="field">
+    <label class= "label is-small">Username</label>
+     <div class="control">
+      <input class="input is-small" type="text" name="username" value="" id="username_field"><br>
+     </div>
+    </div>
 
-<form class="form-signin" action="/signup" method="POST">
-<h3>Username</h3>
-<input type="text" name="username" value="" id="username_field"><br>
+     <div class="field">
+      <label class="label is-small">Email</label>
+       <div class="control has-icons-left">
+        <input class="input is-small" type="email" name="email" id="email"><br>
+          <span class="icon is-small is-left">
+           <i class="fas fa-envelope"></i>
+          </span>
+       </div>
+     <div>
 
-<h3>Email</h3>
-<input type="email" name="email" id="email"><br>
+    <div class="field">
+     <label class="label is-small">Password</label>
+     <div class="control">
+      <input class="input is-small" type="password" name="password" id="password_field"><br>
+     </div>
+    </div>
 
-<h3>Password</h3>
-<input type="password" name="password" id="password_field"><br>
-<br>
-<h3>Favourite cocktail types</h3>
+  <div class="field">
+   <label class="label is-small">Favourite cocktail types</label>
+    <div class="control">
+     <label class="radio">
+      <input  type="radio" name="favourite_cocktail" value="rich_creamy" id="type_1">Rich & creamy 
+     </label>
+     <label class="radio">
+       <input  type="radio" name="favourite_cocktail" value="bitter" id="type_2">Bitter
+     </label>
+     <label class="radio">
+      <input  type="radio" name="favourite_cocktail" value="sour" id="type_3">Sour
+     </label>
+     <label class="radio">
+      <input  type="radio" name="favourite_cocktail" value="sweet" id="type_4">Sweet
+     </label>
+     <label class="radio">
+      <input  type="radio" name="favourite_cocktail" value="everything" id="type_5">Open to everything!
+     </label>
+    </div>
+ </div>
 
-<input type="radio" name="favourite_cocktail" value="rich_creamy" id="type_1">
-<label class="form-check-label">Rich & creamy </label>
-<br>
-<input   type="radio" name="favourite_cocktail" value="bitter" id="type_2">
-<label class="form-check-label">Bitter</label>
-<br>
-<input  type="radio" name="favourite_cocktail" value="sour" id="type_3">
-<label class="form-check-label">Sour</label>
-<br>
-<input  type="radio" name="favourite_cocktail" value="sweet" id="type_4">
-<label class="form-check-label">Sweet</label>
-<br>
-<input  type="radio" name="favourite_cocktail" value="everything" id="type_5">
-<label class="form-check-label">Open to everything!</label>
-<br>
-<input type="submit" id="submit">
 
 
-</form>
+  <input type="submit" id="submit">
+
+
+  </form>
 </div>

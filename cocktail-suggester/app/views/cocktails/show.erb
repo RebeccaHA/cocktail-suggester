@@ -1,17 +1,24 @@
-<div class="colums">
-<div class="column">
-<%@cocktails.each do |cocktail|%>
-<h2><%= cocktail.name%></h2>
-<p>Description:<%= cocktail.description%></p><br>
-<p>Glassware:<%= cocktail.glassware%></p><br>
-<p>Ingredients: <%= cocktail.ingredients%></p><br>
-<p>Method:<%= cocktail.method%></p><br>
-<p>Garnish:<%= cocktail.garnish%></p><br>
-<form action="/cocktails" method="POST">
-<input type="hidden" name="id" value="<%= cocktail.id%>">
-<input type="submit" value="Save cocktail">
-</form>
-<%end%>
-</div>
+
+  <%@cocktails.each do |cocktail|%>
+  <div class="card is-4">
+   
+   <h2 class="title"><%= cocktail.name%></h2>
+   <div class="card-content">
+   <p class="">Description</p><br>
+   <p class=""><%= cocktail.description%></p><br>
+   <p class="">Glassware</p><br>
+   <p class=""><%= cocktail.glassware%></p><br>
+   <p class="">Ingredients</p><br>
+   <p class=""><%= cocktail.ingredients%></p><br>
+   <p class="">Method</p><br>
+   <p class=""><%= cocktail.method%></p><br>
+   <p class="">Garnish</p><br>
+   <p> <%= cocktail.garnish%></p><br>
+    <form action="/cocktails" method="POST">
+     <input type="hidden" name="id" value="<%= cocktail.id%>">
+     <input type="submit" value="Save cocktail">
+    </form>
+  <%end%>
+ </div>
 </div>
 

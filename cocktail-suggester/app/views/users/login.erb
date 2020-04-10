@@ -1,10 +1,19 @@
-<div>
-<h1 class="mb-3 font-weight-normal">Login</h1>
+<div class= >
+<h1 class="title">Login</h1>
 <form  class="form-signin" action="/login" method="POST">
-<label for="username" class="sr-only">Username</label>
-<input class="form-control" placeholder="Username" type="text" name="username" value="" id="username_field"><br>
-<label for="password" class="sr-only">Password</label>
-<input class="form-control" placeholder="Password" type="password" name="password" id="password_field"><br>
+ <div class="field">
+  <label for="username" class="label">Username</label>
+ <div class="control">
+  <input class="input" placeholder="Username" type="text" name="username" value="" id="username_field"><br>
+  </div>
+ </div>
+
+ <div class="field">
+<label for="password" class="label">Password</label>
+<div class ="control">
+<input class="input" placeholder="Password" type="password" name="password" id="password_field"><br>
+</div>
+</div>
 <div class="checkbox mb-3">
     <label>
       <input type="checkbox" value="remember-me"> Remember me</label>
