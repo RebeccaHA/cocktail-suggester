@@ -15,23 +15,51 @@
    <link rel="stylesheet" href="/stylesheets/main.css">
    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
    </head>
-    <body class="text-center">
+    <body>
+     <section class="hero is-black">
       <%if Helpers.is_logged_in?(session) && Helpers.current_user(session)%>
-      <nav class="navbar is-black" role="navigation" aria-label="main navigation">
-       <div class="navbar-menu">
-        <div class="navbar-start">
-         <a class="navbar-item" href="/user/<%=Helpers.current_user(session).id%>">My stash lists</a>
-         <a class="navbar-item" href="/stashes/new">New stash ingredients</a>
-         <a class="navbar-item" href="/user/<%=Helpers.current_user(session).id%>/cocktails"> Cocktail library</a> 
-        </div>
-         <div class="navbar-end">
-          <a class="navbar-item" href="/account/<%=Helpers.current_user(session).id%>">Account</a>
-           <a class="navbar-item" href="/logout">
-          <button class="button is-primary is-inverted is-outlined is-rounded">Log Out</button>
-         </a>
-         </div>
-      </div>
+       <div class="hero-head">
+        <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+          <div class="container">
+           <div class="navbar-brand">
+            <a class="navbar-item">
+             <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
+            </a>
+             <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+              <span></span>
+               <span></span>
+                <span></span>
+                 </span>
+            </div>
+             <div id="navbarMenuHeroA" class="navbar-menu">
+               <div class="navbar-start">
+                <a class="navbar-item" href="/user/<%=Helpers.current_user(session).id%>">My stash lists</a>
+                <a class="navbar-item" href="/stashes/new">New stash ingredients</a>
+                <a class="navbar-item" href="/user/<%=Helpers.current_user(session).id%>/cocktails"> Cocktail library</a> 
+                </div>
+               </div>
+
+               <div class="navbar-end">
+                <a class="navbar-item" href="/account/<%=Helpers.current_user(session).id%>">Account</a>
+                <a class="navbar-item" href="/logout">
+                 <button class="button is-primary is-inverted is-outlined is-rounded">Log Out</button>
+                </a>
+               </div>
+             
+            </div>
         </nav>
+      </div>
+        <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Title
+      </h1>
+      <h2 class="subtitle">
+        Subtitle
+      </h2>
+    </div>
+  </div>
+   </section>
         <%end%>
 
          <div class="columns">
@@ -48,7 +76,7 @@
       <footer class="footer">
         <small>&copy; 2020 <strong>CocktailSuggester</strong></small>
       </footer>
-    </div>
+    
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <!--[if lt IE 7]>
