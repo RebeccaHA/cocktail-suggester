@@ -45,14 +45,24 @@
 
 <div class="control">
  <input type="radio" name="user[favourite_cocktail]" value="everything" id="type_5">
-  <label class="radio">Open to everything!</label><br>
+  <label class="radio">Open to everything!</label>
 </div>
 
-<input type="submit" value="Update account">
+<div class="field is-grouped">
+<button class="button is-black is-rounded" type="submit">Update Account</button>
 </form>
+
 <form action="/account/<%=@user.id%>" method="POST">
 <input type="hidden" name="_method" value="DELETE">
-<input type="submit" value="Delete account">
+<a href="/signup">
+ <button class="button is-danger is-rounded">
+    <span>Delete</span>
+     <span class="icon is-small">
+      <i class="fas fa-times"></i>
+    </span>
+  </button>
+</a>
 </form>
-<a href="/logout">Logout</a>
 </div>
+
+
