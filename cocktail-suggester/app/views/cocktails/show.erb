@@ -1,25 +1,23 @@
-
+<div class=container>
   <%@cocktails.each do |cocktail|%>
-  <div class="box">
-   <div class="content">
-   <h2 class="title"><%= cocktail.name%></h2>
-   <div class="content">
-   <p class="">Description</p><br>
-   <p class=""><%= cocktail.description%></p><br>
-   <p class="">Glassware</p><br>
-   <p class=""><%= cocktail.glassware%></p><br>
-   <p class="">Ingredients</p><br>
-   <p class=""><%= cocktail.ingredients%></p><br>
-   <p class="">Method</p><br>
-   <p class=""><%= cocktail.method%></p><br>
-   <p class="">Garnish</p><br>
-   <p> <%= cocktail.garnish%></p><br>
-    <form action="/cocktails" method="POST">
-     <input type="hidden" name="id" value="<%= cocktail.id%>">
-     <input type="submit" value="Save cocktail">
-    </form>
-  <%end%>
- </div>
- </div>
+   <div class="card">
+    <div class="card-content">
+     <h2 class="title"><%= cocktail.name%></h2>
+      <p class="">Description</p>
+      <p class=""><%= cocktail.description%></p><br>
+      <p class="">Glassware</p>
+      <p class=""><%= cocktail.glassware%></p><br>
+      <p class="">Ingredients</p>
+      <p class=""><%= cocktail.ingredients%></p><br>
+      <p class="">Method</p>
+      <p class=""><%= cocktail.method%></p><br>
+      <p class="">Garnish</p>
+      <p> <%= cocktail.garnish%></p><br>
+       <form action="/cocktails" method="POST">
+        <input type="hidden" name="id" value="<%= cocktail.id%>">
+         <button class="button is-black is-rounded" type="submit">Add to your Bar</button>
+       </form>
+    </div>
+   </div>
+ <%end%>
 </div>
-

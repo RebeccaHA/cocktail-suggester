@@ -1,27 +1,33 @@
-<div class="container">
+<section class="hero is-black">
+  <div class="hero-body">
+    <div class="container">
+     <h1 class="title is-2">Your Bar</h1>
+  </div>
+</section>
 
-<h1 class="title is-2">Your Bar</h1>
- <h1 class="title is-4">Cocktail list </h1>
-<% @cocktails.each do |cocktail|%>
+<h1 class="title is-4">Cocktail list </h1>
+ <% @cocktails.each do |cocktail|%>
+  <div class="card">
+   <div class="card-content">
+    <h2 class="title is-5"><%= cocktail.name%></h2>
+    <h3 class="title is-6">Description</h3>
+    <p><%= cocktail.description%></p><br>
+    <h3 class="title is-6">Glassware</h3>
+    <p><%= cocktail.glassware%></p><br>
+    <h3 class="title is-6">Ingredients</h3>
+    <p><%= cocktail.ingredients%></p><br>
+    <h3 class="title is-6">Method</h3>
+    <p><%= cocktail.method%></p><br>
+    <h3 class="title is-6">Garnish</h3>
+    <p><%= cocktail.garnish%></p><br>
 
-<h2 class="title is-5"><%= cocktail.name%></h2>
-<h3 class="title is-6">Description</h3>
-<p><%= cocktail.description%></p><br>
-<h3 class="title is-6">Glassware</h3>
-<p><%= cocktail.glassware%></p><br>
-<h3 class="title is-6">Ingredients</h3>
-<p><%= cocktail.ingredients%></p><br>
-<h3 class="title is-6">Method</h3>
-<p><%= cocktail.method%></p><br>
-<h3 class="title is-6">Garnish</h3>
-<p><%= cocktail.garnish%></p><br>
-
-<form action="/user/<%=@user.id%>/cocktail" method="POST">
-<input type="hidden" name="_method" value="DELETE">
-<input type="hidden" type="_method" name="cocktail[id]" value="<%= cocktail.id%>">
-
-<button class="button is-round is-black" type="submit">Remove <%= cocktail.name%> from your bar </button>
-</form>
+     <form action="/user/<%=@user.id%>/cocktail" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+       <input type="hidden" type="_method" name="cocktail[id]" value="<%= cocktail.id%>">
+        <button class="button is-rounded is-black" type="submit">Remove <%= cocktail.name%> from your bar </button>
+    </form>
+   </div>
+  </div>
 <%end%>
 
 </div>

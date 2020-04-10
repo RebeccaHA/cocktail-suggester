@@ -16,7 +16,6 @@
    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
    </head>
     <body class="text-center">
-     <div>
       <%if Helpers.is_logged_in?(session) && Helpers.current_user(session)%>
       <nav class="navbar is-black" role="navigation" aria-label="main navigation">
        <div class="navbar-menu">
@@ -34,9 +33,19 @@
       </div>
         </nav>
         <%end%>
-        <%= yield %>
 
-      <footer class="branding">
+         <div class="columns">
+         <div class="column">
+          <div class="column">
+           <div class="column">
+          
+        <%= yield %>
+         </div>
+           </div>
+           </div>
+           </div>
+
+      <footer class="footer">
         <small>&copy; 2020 <strong>CocktailSuggester</strong></small>
       </footer>
     </div>

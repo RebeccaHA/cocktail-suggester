@@ -1,20 +1,26 @@
 <div class="container">
-<div class="content">
-<h2 class="title is-4">Stash list </h2>
-<% @stashes.each_with_index do |stash, index|%>
-   <h3 class="title is-5"><%= index%>. <%=stash.name%></h3>
-    <%stash.ingredients.each do |ingredient|%>
+ <section class="hero is-black">
+  <div class="hero-body">
+    <h1 class="title is-2">Booze cabinet</h1>
+  </div>
+ </section>
 
-<p><%= ingredient.name%></p>
-<%end%>
+    <%@stashes.each_with_index do |stash, index|%>
+    <div class="card">
+     <div class="card-content">
+      <h3 class="title is-5"><%= index%>. <%=stash.name%></h3>
+      <%stash.ingredients.each do |ingredient|%>
+       <p><%= ingredient.name%></p>
+      <%end%>
 
-<a href="/stashes/<%= stash.id %>/edit">
-<button class="button is-black is-rounded" type="submit">Edit Stash</button>
-</a>
+        <a href="/stashes/<%= stash.id %>/edit">
+        <button class="button is-black is-rounded" type="submit">Edit Stash</button>
+        </a>
 
-<a href="/stashes/<%= stash.id %>/cocktail">
-<button class="button is-black is-rounded" type="submit">Cocktail Suggestions</button>
-</a>
-<%end%>
-</div>
+        <a href="/stashes/<%= stash.id %>/cocktail">
+        <button class="button is-black is-rounded" type="submit">Cocktail Suggestions</button>
+        </a>
+     </div>
+    </div>
+    <%end%>
 </div>

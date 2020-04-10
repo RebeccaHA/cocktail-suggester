@@ -4,6 +4,14 @@
   font-family: 'LibreBaskerville';
   src: url("https://fonts.googleapis.com/css?family=LibreBaskerville");
 }
+
+.card {
+  display: inline-block;
+ 
+  max-height: auto;
+  max-width: auto;
+  margin: 1px 10px 10px 1px;
+}
 /* input fields */
 .input{
   max-width: 20%;

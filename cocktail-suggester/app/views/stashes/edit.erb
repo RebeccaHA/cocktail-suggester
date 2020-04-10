@@ -1,4 +1,10 @@
-<h1 class="title is-1">Edit your stash here</h1>
+<section class="hero is-black">
+  <div class="hero-body">
+    <div class="container">
+     <h1 class="title is-2">Edit your booze cabinet</h1>
+  </div>
+</section>
+
 <form action="/stashes/<%= @stash.id %>" method="POST">
 <input type="hidden" name="_method" value="patch">
 <input type="text" name="stash[name]" value="<%=@stash.name%>"><br>
