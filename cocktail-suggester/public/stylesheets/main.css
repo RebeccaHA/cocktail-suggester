@@ -4,6 +4,9 @@
   font-family: 'LibreBaskerville';
   src: url("https://fonts.googleapis.com/css?family=LibreBaskerville");
 }
+.login{
+  margin: auto;
+}
 
 
 .card {
