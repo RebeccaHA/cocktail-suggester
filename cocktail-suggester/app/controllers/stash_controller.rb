@@ -25,6 +25,8 @@ class StashController < ApplicationController
     end
 
     get '/stashes/:id/cocktail' do
+        @hero_body = "Cocktails from your cabinet"
+        @hero_subtitle= "If a cocktail takes your fancy, you can save it to your bar to revist at a later date"
         @stash = Stash.find_by_id(params[:id])
         @cocktails = Cocktail.all.select do |cocktail|
             @stash.ingredients.detect do |ingredient|
@@ -34,8 +36,7 @@ class StashController < ApplicationController
            
         end
     
-        @cocktails.stash = @stash
-        @cocktails.save
+       
         
         erb :'/cocktails/show'
     end

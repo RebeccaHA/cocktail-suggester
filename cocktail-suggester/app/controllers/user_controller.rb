@@ -43,6 +43,7 @@ class UserController < ApplicationController
     get '/user/:id/cocktails' do
         if Helpers.is_logged_in?(session)
          @hero_body = "The Bar"
+         @hero_subtitle="A list of your saved favourites ready for the special evening"
          @user = User.find_by_id(params[:id])
          @cocktails = @user.cocktails
          
