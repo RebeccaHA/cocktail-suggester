@@ -73,6 +73,16 @@ class StashController < ApplicationController
      erb :'/users/error'
     end
 
+    delete '/stashes/:id' do
+        stash = Stash.find_by_id(params[:id])
+        user = Helpers.current_user(session)
+    
+        if user == Helpers.current_user(session) 
+            stash.delete
+        end
+     redirect to "/user/#{user.id}"
+     end
+
    
 
 end
