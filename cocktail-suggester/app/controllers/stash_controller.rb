@@ -25,7 +25,7 @@ class StashController < ApplicationController
             i.save
        
         end
-    
+        flash[:success] = "Cabinet successfully created"
         redirect to "/user/#{user.id}"
     end
 
@@ -79,6 +79,7 @@ class StashController < ApplicationController
     
         if user == Helpers.current_user(session) 
             stash.delete
+            flash[:danger] = "Cabinet deleted"
         end
      redirect to "/user/#{user.id}"
      end

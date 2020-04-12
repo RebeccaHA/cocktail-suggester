@@ -4,6 +4,10 @@
   font-family: 'LibreBaskerville';
   src: url("https://fonts.googleapis.com/css?family=LibreBaskerville");
 }
+
+.notification{
+  padding: 0px;
+}
 .login{
   margin: auto;
 }

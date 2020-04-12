@@ -22,8 +22,9 @@ class UserController < ApplicationController
         user = User.create(params)
         user.save
         session[:user_id] = user.id
-
+        flash[:success] = "Account successfully created"
         redirect "/user/#{user.id}"
+        
     end
 
     get '/user/:id' do
@@ -80,6 +81,7 @@ class UserController < ApplicationController
         if user == Helpers.current_user(session) 
             user.destroy
             session.clear
+            flash[:danger] = "Account deleted"
         end
         redirect to '/signup'
      end
