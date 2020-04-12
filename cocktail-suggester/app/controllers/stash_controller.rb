@@ -1,9 +1,4 @@
 class StashController < ApplicationController
-    get '/stashes' do
-        @stashes = Stash.all
-        erb :'/stashes/index'
-    end
-
     get '/stashes/new' do
         @hero_body="Add a cocktail cabinet"
         if !Helpers.is_logged_in?(session)
