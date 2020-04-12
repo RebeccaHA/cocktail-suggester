@@ -34,8 +34,8 @@ class StashController < ApplicationController
            
         end
     
-        #@cocktails.stash = @stash
-       # @cocktails.save
+        @cocktails.stash = @stash
+        @cocktails.save
         
         erb :'/cocktails/show'
     end
@@ -43,9 +43,14 @@ class StashController < ApplicationController
 
 
     get '/stashes/:id/edit' do
+      user = Helpers.current_user(session)
+       if user == Helpers.current_user(session) 
         @stash = Stash.find_by_id(params[:id])
         @user = @stash.user
         erb :'/stashes/edit'
+       else
+        redirect "/login"
+       end
     end
 
     patch '/stashes/:id' do
@@ -62,10 +67,10 @@ class StashController < ApplicationController
             i.update(ingredient)
             i.save
         
-        end
-         redirect to "/user/#{user.id}"
+            redirect to "/user/#{user.id}"
+        
        end
-     erb :'/users/error'
+     
     end
 
     delete '/stashes/:id' do
@@ -73,12 +78,14 @@ class StashController < ApplicationController
         user = Helpers.current_user(session)
     
         if user == Helpers.current_user(session) 
-            stash.delete
-            flash[:danger] = "Cabinet deleted"
+         stash.delete
+         flash[:danger] = "Cabinet deleted"
+        
+         redirect to "/user/#{user.id}"
+        else
+         redirect to "/login"
         end
-     redirect to "/user/#{user.id}"
      end
 
-   
-
+end
 end

@@ -6,18 +6,18 @@ class UserController < ApplicationController
     end
 
     post'/login' do
-        user = User.find_by(username: params[:username])
-        if user !=nil && user.authenticate(params[:password])
-            session[:user_id] = user.id 
-            redirect "/user/#{user.id}"
-        else
+     user = User.find_by(username: params[:username])
+      if user !=nil && user.authenticate(params[:password])
+        session[:user_id] = user.id 
+        redirect "/user/#{user.id}"
+      else 
         flash[:warning] = "Incorrect information, please re-enter or sign up"
         redirect "/login"
-        end
+      end
     end
 
     get '/signup' do
-    erb :'/users/sign_up'
+     erb :'/users/sign_up'
     end
 
     post '/signup' do
@@ -33,7 +33,8 @@ class UserController < ApplicationController
          @hero_body = "Cocktail cabinet"
          @user = User.find_by_id(params[:id])
          @stashes = @user.stashes       
-             erb :'/users/show'
+             
+         erb :'/users/show'
         else 
          redirect to "/login"
         end
@@ -44,6 +45,7 @@ class UserController < ApplicationController
          @hero_body = "The Bar"
          @user = User.find_by_id(params[:id])
          @cocktails = @user.cocktails
+         
          erb :'/cocktails/index'
         else
         redirect to "/login"
@@ -53,8 +55,9 @@ class UserController < ApplicationController
 
     get '/account/:id' do 
         if Helpers.is_logged_in?(session)
-            @hero_body = "Account"
-            @user = Helpers.current_user(session)
+         @hero_body = "Account"
+         @user = Helpers.current_user(session)
+         
          erb :'users/account'
         else
          redirect to "/login" 
@@ -63,8 +66,9 @@ class UserController < ApplicationController
 
     get '/account/:id/edit' do
         if Helpers.is_logged_in?(session)
-            @hero_body = "Edit your account"
-            @user = Helpers.current_user(session)
+         @hero_body = "Edit your account"
+         @user = Helpers.current_user(session)
+         
          erb :'users/account_edit'
         else
          redirect to "/login" 
@@ -75,9 +79,8 @@ class UserController < ApplicationController
         user = User.find_by_id(params[:id])
     
         if user == Helpers.current_user(session) 
-            user.update(params[:user])
-
-        redirect to "/account/#{user.id}"
+         user.update(params[:user])
+         redirect to "/account/#{user.id}"
         else
          redirect to "/login"   
         end
@@ -97,7 +100,7 @@ class UserController < ApplicationController
             session.clear
             flash[:danger] = "Account deleted"
         else
-        redirect to '/signup'
+         redirect to '/signup'
         end
      end
  end

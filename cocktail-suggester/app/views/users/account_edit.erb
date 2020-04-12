@@ -21,7 +21,7 @@
   <input class="input is-small" type="password" name="user[password]" value="<%=@user.password%>">
 
   <div class="field">
-  <label class="label is-medium">Favourite cocktail types</label>
+  <label class="label is-medium">Favourite cocktail type: <%=@user.favourite_cocktail%></label>
     <div class="control">
     <input type="radio" name="user[favourite_cocktail]" value="rich_creamy" id="type_1">
       <label class="radio" >Rich & creamy </label>
@@ -39,7 +39,7 @@
 
   <div class="control">
   <input type="radio" name="user[favourite_cocktail]" value="sweet" id="type_4">
-    <label class="radio" >Sweet</label>
+    <label class="radio">Sweet</label>
   </div>
 
   <div class="control">
@@ -48,7 +48,7 @@
   </div>
 
   <div class="field is-grouped">
-  <button class="button is-black is-rounded" type="submit">Update Account</button>
+   <button class="button is-black is-rounded" type="submit">Update Account</button>
   </form>
 
   <form action="/account/<%=@user.id%>" method="POST">
@@ -63,6 +63,7 @@
   </a>
   </form>
   </div>
+  
 
 </div>
 
