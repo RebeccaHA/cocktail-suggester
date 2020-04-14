@@ -18,7 +18,7 @@ class StashController < ApplicationController
             i = Ingredient.create(ingredient)
             i.stash = stash
             i.save
-       
+       binding.pry
         end
         flash[:success] = "Cabinet successfully created"
         redirect to "/user/#{user.id}"
