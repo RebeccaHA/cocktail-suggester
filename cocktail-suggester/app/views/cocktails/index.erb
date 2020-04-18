@@ -8,8 +8,9 @@
     <p><%= cocktail.description%></p><br>
     <h3 class="title is-6">Glassware</h3>
     <p><%= cocktail.glassware%></p><br>
-
-    <img src="/images/<%=cocktail.glassware.gsub(' ', '').downcase%>.svg">
+    <figure class="image is-64x64">
+    <img class="is-rounded" src="/images/<%=cocktail.glassware.gsub(' ', '').downcase%>.svg">
+    </figure>
     <h3 class="title is-6">Ingredients</h3>
     <p><%= cocktail.ingredients%></p><br>
     <h3 class="title is-6">Method</h3>

@@ -6,11 +6,12 @@
       <p class="">Description</p>
       <p class=""><%= cocktail.description%></p><br>
       <p class="">Glassware</p>
-      <div>
+     
       <p class=""><%= cocktail.glassware%></p><br>
-
-    <img src="/images/<%=cocktail.glassware.gsub(' ', '').downcase%>.svg">
-    </div>
+    <figure class="image is-64x64">
+    <img class="is-rounded" src="/images/<%=cocktail.glassware.gsub(' ', '').downcase%>.svg">
+    </figure>
+    
       <p class="">Ingredients</p>
       <p class=""><%= cocktail.ingredients%></p><br>
       <p class="">Method</p>
