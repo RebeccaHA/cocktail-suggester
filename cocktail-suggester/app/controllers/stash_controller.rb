@@ -8,8 +8,10 @@ class StashController < ApplicationController
     end
 
     post '/stashes' do
-        stash = Stash.create(name: params[:name])
         user = Helpers.current_user(session)
+        user.stashes.create(name: params[:name])
+        stash = Stash.create(name: params[:name])
+        
        
         stash.user = user
         stash.save
@@ -41,8 +43,6 @@ class StashController < ApplicationController
         erb :'/cocktails/show'
     end
 
-
-
     get '/stashes/:id/edit' do
       user = Helpers.current_user(session)
        if user == Helpers.current_user(session) 
@@ -55,22 +55,26 @@ class StashController < ApplicationController
     end
 
     patch '/stashes/:id' do
+        user = Helpers.current_user(session)
      
        stash = Stash.find_by_id(params[:id])
         if stash.user == Helpers.current_user(session)
     
          stash.update(params[:stash])
-         user = Helpers.current_user(session)
+         
        
          
          params[:ingredients].each do |ingredient|
             i= Ingredient.find_by_id(ingredient[:id])
             i.update(ingredient)
             i.save
-        
+        end
             redirect to "/user/#{user.id}"
-        
-       end
+         
+         else
+            flash[:danger] = "You can't update another users stash"
+        redirect to  "/user/#{user.id}"
+        end
      
     end
 
@@ -88,5 +92,4 @@ class StashController < ApplicationController
         end
      end
 
-end
-end
+    end

@@ -6,6 +6,7 @@ require 'csv'
 csv = CSV.open('db/cocktails_2.csv', headers: :first_row).map(&:to_h)
 
     csv.each do |row|
+    binding.pry
         cocktail = Cocktail.new
         cocktail.name = row['name']
         cocktail.description = row['description']
