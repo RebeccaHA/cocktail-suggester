@@ -1,4 +1,8 @@
 class UserController < ApplicationController
+
+    get '/about' do
+        erb :'users/about'
+    end
     
     get '/login' do
         

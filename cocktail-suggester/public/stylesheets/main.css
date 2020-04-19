@@ -29,3 +29,8 @@
   width:100%;
 }
 
+figure{
+  display: inline-block;
+}
+
+
