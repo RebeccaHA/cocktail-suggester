@@ -1,15 +1,15 @@
 class StashController < ApplicationController
-    get '/stashes/new' do
+    get '/cabinets/new' do
         @hero_body="Add a cocktail cabinet"
         if !Helpers.is_logged_in?(session)
             redirect '/login'
         end
-        erb :'/stashes/new'
+        erb :'/cabinets/new'
     end
 
-    post '/stashes' do
+    post '/cabinets' do
         user = Helpers.current_user(session)
-        user.stashes.create(name: params[:name])
+        # user.stashes.create(name: params[:name])
         stash = Stash.create(name: params[:name])
         
        
@@ -26,13 +26,13 @@ class StashController < ApplicationController
         redirect to "/user/#{user.id}"
     end
 
-    get '/stashes/:id/cocktail' do
+    get '/cabinets/:id/cocktail' do
         @hero_body = "Cocktails from your cabinet"
         @hero_subtitle= "If a cocktail takes your fancy, you can save it to your bar to revist at a later date"
         @stash = Stash.find_by_id(params[:id])
         @cocktails = Cocktail.all.select do |cocktail|
             @stash.ingredients.detect do |ingredient|
-                cocktail.ingredients.include?(ingredient.name)
+                cocktail.ingredients.downcase.include?(ingredient.name.downcase)
               
             end
            
@@ -43,18 +43,18 @@ class StashController < ApplicationController
         erb :'/cocktails/show'
     end
 
-    get '/stashes/:id/edit' do
+    get '/cabinets/:id/edit' do
       user = Helpers.current_user(session)
        if user == Helpers.current_user(session) 
         @stash = Stash.find_by_id(params[:id])
         @user = @stash.user
-        erb :'/stashes/edit'
+        erb :'/cabinets/edit'
        else
         redirect "/login"
        end
     end
 
-    patch '/stashes/:id' do
+    patch '/cabinets/:id' do
         user = Helpers.current_user(session)
      
        stash = Stash.find_by_id(params[:id])
@@ -78,7 +78,7 @@ class StashController < ApplicationController
      
     end
 
-    delete '/stashes/:id' do
+    delete '/cabinets/:id' do
         stash = Stash.find_by_id(params[:id])
         user = Helpers.current_user(session)
     

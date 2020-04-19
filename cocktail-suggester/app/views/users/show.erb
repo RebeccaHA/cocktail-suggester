@@ -7,15 +7,15 @@
        <p><%= ingredient.name%></p>
       <%end%>
 
-        <a href="/stashes/<%= stash.id %>/edit">
+        <a href="/cabinets/<%= stash.id %>/edit">
         <button class="button is-black is-rounded" type="submit">Edit Cabinet</button>
         </a>
 
-        <a href="/stashes/<%= stash.id %>/cocktail">
+        <a href="/cabinets/<%= stash.id %>/cocktail">
         <button class="button is-black is-rounded" type="submit">Head to the bar</button>
         </a>
 
-        <form action="/stashes/<%=stash.id%>" method="POST">
+        <form action="/cabinets/<%=stash.id%>" method="POST">
          <input type="hidden" name="_method" value="DELETE">
         
           <button class="button is-danger is-rounded">

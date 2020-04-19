@@ -1,0 +1,20 @@
+<div class="container">
+<form action="/cabinets/<%= @stash.id %>" method="POST">
+<input type="hidden" name="_method" value="patch">
+
+<div class="field">
+ <label class="label is-medium">Cabinet name</label>
+  <div class=control>
+   <input class="input is-small" type="text" name="stash[name]" value="<%=@stash.name%>"><br>
+  </div>
+</div>
+
+<%@stash.ingredients.each do |ingredient|%>
+<div class="field">
+<label class="label is-medium">Ingredient</label>
+<input type="text" name="[ingredients][][name]" value="<%=ingredient.name%>"><br>
+<input type="hidden" name="[ingredients][][id]" value="<%=ingredient.id%>"><br>
+<%end%>
+<button class="button is-black is-rounded" type="submit">Update Cabinet</button>
+</form>
+</div>
