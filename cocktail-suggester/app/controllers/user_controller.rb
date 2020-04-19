@@ -1,6 +1,7 @@
 class UserController < ApplicationController
 
     get '/about' do
+        @hero_body = "Whatail?"
         erb :'users/about'
     end
     

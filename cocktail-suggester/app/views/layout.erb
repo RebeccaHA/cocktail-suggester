@@ -14,7 +14,7 @@
 
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
    <link rel="stylesheet" href="/stylesheets/main.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+   <script type="text/javascript" src="/javascripts/navigation.js"></script>  
    
     </head>
      <body>
@@ -24,44 +24,40 @@
       <button class="delete" onclick="this.parentElement.style.display='none'"></button>
      </div>
      <% end %>
+     
       
      <%if Helpers.is_logged_in?(session) && Helpers.current_user(session)%>
       <section class="hero is-black">
       
        <div class="hero-head">
         <nav class="navbar is-black" role="navigation" aria-label="main navigation">
-          <div class="container">
-           <div class="navbar-brand">
-            <a class="navbar-item">
-             <img src="/images/logo-big.png" alt="Logo">
-            </a>
-             <span class="navbar-burger burger" data-target="navbarMenuHeroA">
-              <span></span>
-               <span></span>
-                <span></span>
-                 </span>
+          <a class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+           <span aria-hidden="true"></span>
+           <span aria-hidden="true"></span>
+           <span aria-hidden="true"></span>
+          </a>
+            
+          <div  class="navbar-menu" id="navMenu">
+            <div class="navbar-start">
+              <a class="navbar-item" href="/about">About</a>
+              <a class="navbar-item" href="/user/<%=Helpers.current_user(session).id%>">My Cabinets</a>
+              <a class="navbar-item" href="/cabinets/new">New Cabinet</a>
+              <a class="navbar-item" href="/user/<%=Helpers.current_user(session).id%>/cocktails"> Your Bar</a> 
             </div>
-             <div id="navbarMenuHeroA" class="navbar-menu">
-               <div class="navbar-start">
-               <a class="navbar-item" href="/about">About</a>
-                <a class="navbar-item" href="/user/<%=Helpers.current_user(session).id%>">My Cabinets</a>
-                <a class="navbar-item" href="/cabinets/new">New Cabinet</a>
-                <a class="navbar-item" href="/user/<%=Helpers.current_user(session).id%>/cocktails"> Your Bar</a> 
-                </div>
-               </div>
+               
 
-               <div class="navbar-end">
-                <a class="navbar-item" href="/account/<%=Helpers.current_user(session).id%>">Account</a>
-                <a class="navbar-item" href="/logout">
-                 <button class="button is-primary is-inverted is-outlined is-rounded">Log Out</button>
-                </a>
-               </div>
-             
+            <div class="navbar-end">
+              <a class="navbar-item" href="/account/<%=Helpers.current_user(session).id%>">Account</a>
+              <a class="navbar-item" href="/logout">
+                <button class="button is-primary is-inverted is-outlined is-rounded">Log Out</button>
+              </a>
             </div>
+          </div>
         </nav>
       </div>
-        <div class="hero-body">
-    <div class="container">
+
+      <div class="hero-body">
+    
       <h1 class="title">
         <%=@hero_body%>
       </h1>
@@ -71,6 +67,7 @@
     </div>
   </div>
    </section>
+   
         <%end%>
 
           
@@ -81,7 +78,7 @@
       <footer class="footer">
         <small>&copy; 2020 <strong>CocktailSuggester</strong></small>
       </footer>
-   
+  
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <!--[if lt IE 7]>
       <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>

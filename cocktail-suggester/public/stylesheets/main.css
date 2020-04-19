@@ -5,6 +5,10 @@
   src: url("https://fonts.googleapis.com/css?family=LibreBaskerville");
 }
 
+.content{
+  font-family: 'LibreBaskerville';
+}
+
 .login{
   margin: auto;
 }
@@ -29,8 +33,6 @@
   width:100%;
 }
 
-figure{
-  display: inline-block;
-}
+
 
 
