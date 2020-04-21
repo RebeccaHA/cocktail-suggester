@@ -7,9 +7,9 @@
 
 #fixed{
   display: block;
-  position: absolute;
-  width: 100%;
+  position: fixed;
   bottom: 0px;
+  width: 100%;
   padding: 30px;
   background-color: black;
   color: white;
