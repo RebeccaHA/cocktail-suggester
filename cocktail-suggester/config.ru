@@ -7,7 +7,8 @@ end
 
 
 use Rack::MethodOverride
+use UserController
 use StashController
 use CocktailController
-use UserController
+use SiteController
 run ApplicationController

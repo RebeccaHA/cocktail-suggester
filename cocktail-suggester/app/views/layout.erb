@@ -26,7 +26,7 @@
      <% end %>
      
       
-     <%if Helpers.is_logged_in?(session) && Helpers.current_user(session)%>
+    
       <section class="hero is-black">
       
        <div class="hero-head">
@@ -40,14 +40,14 @@
           <div  class="navbar-menu" id="navMenu">
             <div class="navbar-start">
               <a class="navbar-item" href="/about">About</a>
-              <a class="navbar-item" href="/user/<%=Helpers.current_user(session).id%>">My Cabinets</a>
+              <a class="navbar-item" href="">My Cabinets</a>
               <a class="navbar-item" href="/cabinets/new">New Cabinet</a>
-              <a class="navbar-item" href="/user/<%=Helpers.current_user(session).id%>/cocktails"> Your Bar</a> 
+              <a class="navbar-item" href=""> Your Bar</a> 
             </div>
                
 
             <div class="navbar-end">
-              <a class="navbar-item" href="/account/<%=Helpers.current_user(session).id%>">Account</a>
+              <a class="navbar-item" href="">Account</a>
               <a class="navbar-item" href="/logout">
                 <button class="button is-primary is-inverted is-outlined is-rounded">Log Out</button>
               </a>
@@ -68,17 +68,13 @@
   </div>
    </section>
    
-        <%end%>
+      
 
           
            <%= yield %>
 
          
 
-      <footer class="footer" id="fixed">
-        <div class="container"><p>&copy; 2020 <strong> Whatail? </strong></p></div>
-      </footer>
-  
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <!--[if lt IE 7]>
       <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
