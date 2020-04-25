@@ -25,10 +25,18 @@
       <p class=""><%= cocktail.method%></p><br>
       <p class="">Garnish</p>
       <p> <%= cocktail.garnish%></p><br>
+       
+       <% if Helpers.is_logged_in?(session)%>
        <form action="/cocktails" method="POST">
         <input type="hidden" name="id" value="<%= cocktail.id%>">
+         
          <button class="button is-black is-rounded" type="submit">Add to your Bar</button>
-       </form>
+         </form>
+         <%else%>
+         <a href="/login">
+         <button class="button is-black is-rounded" type="submit">Login</button>
+         </a>
+          <%end%>
     </div>
    </div>
  <%end%>

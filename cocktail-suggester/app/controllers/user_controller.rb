@@ -28,17 +28,14 @@ class UserController < ApplicationController
         redirect "/user/#{user.id}"
     end
 
-    get '/user/:id' do
-        if Helpers.is_logged_in?(session)
-         @hero_body = "Cocktail cabinet"
-         @user = User.find_by_id(params[:id])
-         @stashes = @user.stashes       
-             
-         erb :'/users/show'
-        else 
-         redirect to "/login"
-        end
-    end
+
+    get '/user/:id/cabinets' do
+        @hero_body = "Cocktail cabinet"
+        @user = User.find_by_id(params[:session_id])
+        @stashes = @user.stashes       
+            
+        erb :'/users/show'
+   end
 
     get '/user/:id/cocktails' do
         if Helpers.is_logged_in?(session)

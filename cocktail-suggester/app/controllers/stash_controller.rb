@@ -1,17 +1,12 @@
 class StashController < ApplicationController
     get '/cabinets/new' do
         @hero_body="Add a cocktail cabinet"
-      
+        
         erb :'/cabinets/new'
     end
 
     post '/cabinets' do
-        user = Helpers.current_user(session)
-        # user.stashes.create(name: params[:name])
         stash = Stash.create(name: params[:name])
-        
-       
-        stash.user = user
         stash.save
 
         params[:ingredients].each do |ingredient|
@@ -21,8 +16,13 @@ class StashController < ApplicationController
       
         end
         flash[:success] = "Cabinet successfully created"
-        redirect to "/user/#{user.id}"
+        redirect to "/cabinets/#{stash.id}/cocktail"
     end
+
+   
+
+  
+
 
     get '/cabinets/:id/cocktail' do
         @hero_body = "Cocktails from your cabinet"
