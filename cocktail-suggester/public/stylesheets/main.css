@@ -5,7 +5,9 @@
   src: url("https://fonts.googleapis.com/css?family=LibreBaskerville");
 }
 
-
+#font{
+  font-family: 'LibreBaskerville';
+}
 
 .content{
   font-family: 'LibreBaskerville';
