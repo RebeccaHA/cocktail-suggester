@@ -31,7 +31,7 @@ class UserController < ApplicationController
 
     get '/user/:id/cabinets' do
         @hero_body = "Cocktail cabinet"
-        @user = User.find_by_id(params[:session_id])
+        @user = User.find_by_id(params[:id])
         @stashes = @user.stashes       
             
         erb :'/users/show'

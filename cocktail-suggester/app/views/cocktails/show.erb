@@ -13,17 +13,17 @@
       <p><%= cocktail.glassware%></p><br>
     </div>
     </div>
-     <figure class="media-left">
-    <img class="image is-64x64" src="/images/<%=cocktail.glassware.gsub(' ', '').downcase%>.svg">
-      </figure>
+      <figure class="image is-64x64">
+   <img class="is-rounded" src="/images/<%=cocktail.glassware.gsub(' ', '').downcase%>.svg">
+    </figure>
   
     </article>
     
-      <p class="">Ingredients</p>
-      <p class=""><%= cocktail.ingredients%></p><br>
-      <p class="">Method</p>
-      <p class=""><%= cocktail.method%></p><br>
-      <p class="">Garnish</p>
+      <p>Ingredients</p>
+      <p><%= cocktail.ingredients%></p><br>
+      <p>Method</p>
+      <p><%= cocktail.method%></p><br>
+      <p>Garnish</p>
       <p> <%= cocktail.garnish%></p><br>
        
        <% if Helpers.is_logged_in?(session)%>
