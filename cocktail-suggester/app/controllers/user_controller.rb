@@ -9,7 +9,7 @@ class UserController < ApplicationController
      user = User.find_by(username: params[:username])
       if user !=nil && user.authenticate(params[:password])
         session[:user_id] = user.id 
-        redirect "/user/#{user.id}"
+        redirect "/user/#{user.id}/cabinets"
       else 
         flash[:warning] = "Incorrect information, please re-enter or sign up"
         redirect "/login"
@@ -101,6 +101,7 @@ class UserController < ApplicationController
          redirect to '/signup'
         end
      end
+
  end
         
     

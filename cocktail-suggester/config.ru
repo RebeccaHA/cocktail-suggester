@@ -7,6 +7,7 @@ end
 
 
 use Rack::MethodOverride
+use RecipeController
 use UserController
 use StashController
 use CocktailController

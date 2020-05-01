@@ -35,9 +35,6 @@ class StashController < ApplicationController
             end
            
         end
-    
-       
-        
         erb :'/cocktails/show'
     end
 
